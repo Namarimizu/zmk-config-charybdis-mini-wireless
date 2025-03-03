@@ -307,6 +307,16 @@
             quick-tap-ms = <200>;
             retro-tap;
         };
+
+        sticky_key_custom_alt: sticky_key_custom_alt {
+            compatible = "zmk,behavior-sticky-key";
+            label = "STICKY_KEY_CUSTOM_ALT";
+            bindings = <&kp>;
+            #binding-cells = <1>;
+            release-after-ms = <1500>;
+            quick-release;
+            ignore-modifiers;
+        };
     };
 
     keymap {
@@ -314,10 +324,10 @@
 
         BASE {
             bindings = <
-&kp ESCAPE      &kp Q                 &kp W                 &kp E              &kp R                   &kp T        &kp Y                             &kp U                    &kp I               &kp O                   &kp P                            &mt LEFT_WIN EQUAL
-&kp LEFT_SHIFT  &hrm_left LEFT_GUI A  &hrm_left LEFT_ALT S  &hrm_left LCTRL D  &hrm_left LEFT_SHIFT F  &kp G        &kp H                             &hrm_right LEFT_SHIFT J  &hrm_right RCTRL K  &hrm_right RIGHT_ALT L  &hrm_right RIGHT_GUI APOSTROPHE  &kp BACKSPACE
-&kp LCTRL       &kp Z                 &kp X                 &kp C              &kp V                   &kp B        &kp N                             &kp M                    &comma_ex           &period_ex              &question_ex                     &lt 5 MINUS
-                                                            &sk LEFT_ALT       &mo 3                   &kp SPACE    &custom_hold_tap_stickylayer 3 3  &kp RET
+&kp ESCAPE      &kp Q                 &kp W                 &kp E                            &kp R                   &kp T        &kp Y                             &kp U                    &kp I               &kp O                   &kp P                            &mt LEFT_WIN EQUAL
+&kp LEFT_SHIFT  &hrm_left LEFT_GUI A  &hrm_left LEFT_ALT S  &hrm_left LCTRL D                &hrm_left LEFT_SHIFT F  &kp G        &kp H                             &hrm_right LEFT_SHIFT J  &hrm_right RCTRL K  &hrm_right RIGHT_ALT L  &hrm_right RIGHT_GUI APOSTROPHE  &kp BACKSPACE
+&kp LCTRL       &kp Z                 &kp X                 &kp C                            &kp V                   &kp B        &kp N                             &kp M                    &comma_ex           &period_ex              &question_ex                     &lt 5 MINUS
+                                                            &sticky_key_custom_alt LEFT_ALT  &mo 3                   &kp SPACE    &custom_hold_tap_stickylayer 3 3  &kp RET
             >;
         };
 
